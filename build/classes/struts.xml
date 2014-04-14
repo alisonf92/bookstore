@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ -->
+ <!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN" "struts-2.1.7.dtd">
+    <struts>
+  <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+
+    <package name="login" extends="struts-default">
+    <interceptors>
+        <interceptor name="SessionInterceptor" 
+        class="interceptors.ShopcartSessionTracker"/>
+        <interceptor-stack name="SessionStack">
+            <interceptor-ref name="SessionInterceptor">
+                <param name="includeMethods">execute,update</param>
+                <param name="excludeMethods">add,delete</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+        </interceptor-stack>
+    </interceptors>
+        <global-results>
+            <result name="nosession">/jsps/invalidsession.jsp</result>
+        </global-results>
+        <action name="logout">
+            <result>/jsps/logout.jsp</result>
+        </action>
+        <action name="gotologin">
+            <result>/jsps/login.jsp</result>
+        </action>
+        <action name="gotoregister">
+            <result>/jsps/register.jsp</result>
+        </action>
+        <action name="purchase">
+            <result>/jsps/payment.jsp</result>
+        </action>
+      
+        <action name="log" class="actions.LoginAction">
+            <result name="success">/jsps/category.jsp</result>
+            <result name="failed">/jsps/failed.jsp</result>
+            <result name="input">/jsps/login.jsp</result>
+            <result name="error">/jsps/login.jsp</result>
+        </action>
+        <action name="register" class="actions.RegisterAction">
+            <result name="success">registersuccess.jsp</result>
+            <result name="failed">/jsps/failed.jsp</result>
+            <result name="input">/jsps/register.jsp</result>
+        </action>
+        <action name="showbooks" class="actions.ShowBooksAction">
+            
+            <interceptor-ref name="SessionStack"/>
+            <interceptor-ref name="execAndWait">
+            <param name="delaySleepInterval">100</param>
+            </interceptor-ref>
+            
+            <result name="wait">/jsps/wait.jsp</result>
+            <result name="success" >/jsps/showbooks.jsp</result>
+            <result name="input">/jsps/category.jsp</result>
+        </action>
+        <action name="selectedbooks" class="actions.StoreBooksAction">
+            <interceptor-ref name="SessionStack"/>
+            <result name="success" >/jsps/showselected.jsp</result>
+            <result name="input">/jsps/showbooks.jsp</result>
+        </action>
+        <action name="makepayment" class="actions.PaymentAction">
+            <interceptor-ref name="SessionStack"/>
+            <result name="Cash" >/jsps/billdetails.jsp</result>
+            <result name="Card" >/jsps/billdetails.jsp</result>
+            <result name="input">/jsps/payment.jsp</result>
+        </action>
+        <action name="thankyou" class="actions.PaymentMade" method="execute">
+            <interceptor-ref name="SessionStack"/>
+            <result>/jsps/thankyou.jsp</result>
+            <result name="input">/jsps/billdetails.jsp</result>
+        </action>
+        <action name="*Book" method="{1}" 
+        class="actions.BookAction">
+        <interceptor-ref name="SessionStack"/>
+            <result>/jsps/success.jsp</result>
+        </action>
+    </package>
+    </struts>
