@@ -16,8 +16,8 @@ Welcome <s:property value="#session.user.userName"/> <a href='<s:url action="log
 <s:set var="allBooks" value="bookList" scope="session"/>
 <s:iterator value="bookList">
 <tr><td><s:checkbox name="selectedBooks" fieldValue="%{bookId}"/>
-<s:property value="bookName"/></td>
-<td><s:property value="bookPrice"/></td></tr>
+<s:property value="title"/></td>
+<td><s:property value="price"/></td></tr>
 </s:iterator>
 <tr><td><s:submit value="Add To Cart"/></td></tr>
 </table>

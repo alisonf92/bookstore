@@ -11,10 +11,7 @@ Welcome <s:property value="#session.user.userName"/> <a href='<s:url action="log
 <body>
 <center>
     <s:form action="makepayment">
-        <s:text name="Your Total Bill is : "/><s:text name="#session['bill']"/>
-        <%--
-        <s:radio label= "Payment Mode " name= "mode" list="#{'1':'Cash','2':'Card'}" value="2"/>
-         --%>    
+        <s:text name="Your Total Bill is : "/><s:text name="#session['bill']"/>  
          <s:radio label= "Payment Mode " name= "mode" list="{'Cash','Card'}"/>
     <s:submit value="Select Mode"/>    
     </s:form>

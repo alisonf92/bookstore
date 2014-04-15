@@ -34,12 +34,12 @@ public class AdminDAO {
     public boolean addBook(Book book){
         boolean added=false;
         try {
-            st=con.prepareStatement("insert into book(title, author, price, categoryid) values(?,?,?,?)");
+            st=con.prepareStatement("insert into book values(?,?,?,?)");
             st.clearParameters();
-            st.setString(1,book.getTitle());
-            st.setString(2,book.getAuthor());
-            st.setDouble(3,book.getPrice());
-            st.setInt(4, book.getCategoryId());
+            st.setString(2,book.getTitle());
+            st.setString(3,book.getAuthor());
+            st.setDouble(4,book.getPrice());
+            st.setInt(5, book.getCategoryId());
             int count=st.executeUpdate();
             if(count==1){
                 added=true;

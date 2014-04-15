@@ -14,8 +14,8 @@ Welcome <s:property value="#session.user.userName"/> <a href='<s:url action="log
         <table border=2>
         <tr><td>Book Name</td><td>Book Price</td></tr>
         <s:iterator value="#session['currSelected']">
-            <tr><td><s:property value="bookName"/></td>
-            <td><s:property value="bookPrice"/></td></tr>
+            <tr><td><s:property value="title"/></td>
+            <td><s:property value="price"/></td></tr>
         </s:iterator>
         <tr><td><s:text name="Current Bill : "/></td>
         <td><s:text name="#session['bill']"/> </td></tr>

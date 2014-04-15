@@ -12,10 +12,9 @@
 <table border="2">
 <tr><td><a href='<s:url action="gotologin"/>'>Login</a></td></tr>
 <tr><td><a href='<s:url action="gotoregister"/>'>Register Here</a></td></tr>
-<<<<<<< HEAD
+
 <tr><td><a href='<s:url action="gotoadmin"/>'>Admin Login</a></td></tr>
-=======
->>>>>>> 035925f13397ecfef33a356f4efaeedb921a41ff
+
 </table>
 </center>
 </body>

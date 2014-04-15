@@ -10,7 +10,7 @@
 <body>
 <s:form action="book">
 <s:textfield name="book.bookId" label="Book ID"/>
-<s:textfield name="book.bookName" label="Book Name"/>
+<s:textfield name="book.title" label="Book Name"/>
 <s:textfield name="book.categoryId" label="Category ID"/>
 <s:textfield name="book.bookPrice" label="Book Price"/>
 <s:submit value="add" action="addBook"/>

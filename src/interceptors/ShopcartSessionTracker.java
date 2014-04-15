@@ -19,21 +19,21 @@ public class ShopcartSessionTracker  implements Interceptor{
     public void setExcludeMethods(String excludeMethods) {
         this.excludeMethods =
                 TextParseUtil.commaDelimitedStringToSet(excludeMethods);
-                System.out.println("+++++++++++ EX +++++++"+excludeMethods);
+                
     }
     public void setIncludeMethods(String includeMethods) {
         this.includeMethods = 
                 TextParseUtil.commaDelimitedStringToSet(includeMethods);
-        System.out.println("++++++++++++In ++++"+includeMethods);
+        
     }
     @Override
     public void destroy() {
-        System.out.println("++++++++++ destroy ++++++++++++");
+        
         
     }
     @Override
     public void init() {
-        System.out.println("+++++++++++ init++++++++++++++");
+       
         
     }
     @Override
