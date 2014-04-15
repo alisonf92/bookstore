@@ -28,7 +28,7 @@ public class RegisterAction extends ActionSupport implements ModelDriven<Custome
 @Override
 public String execute() throws Exception {
     dao=new ShopCartDAO();
-    boolean isAdded=dao.addUser(customer);
+    boolean isAdded=dao.addCustomer(customer);
     dao.close();
     if(isAdded){
         return "success";

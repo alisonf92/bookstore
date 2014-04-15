@@ -18,18 +18,11 @@ public class AdminDAO {
     private PreparedStatement st;
     private ResultSet rs;
     
-    private Connection getConnection() throws SQLException {
-		java.sql.Connection con;
-		con = ConnectionFactory.getInstance().getConnection();
-		return con;
-	}
-   
+    
     public AdminDAO() {
-        try {
-           con = getConnection();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+       
+        	con = ConnectionFactory.getInstance().getConnection();
+        
     }
     public boolean addBook(Book book){
     	

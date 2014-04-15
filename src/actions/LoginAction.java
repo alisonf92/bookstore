@@ -16,7 +16,7 @@ public class LoginAction extends ActionSupport {
     private String userName;
     private String password;
 
-    private Customer user;
+    private Customer customer;
 
     private ArrayList<Category>categoryList;
     private ShopCartDAO dao;
@@ -54,14 +54,14 @@ public class LoginAction extends ActionSupport {
         System.out.println(userName+" : "+password);
         dao=new ShopCartDAO();
 
-        user=new Customer();
+        customer=new Customer();
 
-        user.setUserName(getUserName());
-        user.setPassword(getPassword());
-        setUser(user);
-        if(dao.isValid(user)){
+        customer.setUserName(getUserName());
+        customer.setPassword(getPassword());
+        setCustomer(customer);
+        if(dao.isValid(customer)){
             setCategoryList(dao.getCategories());
-            session.put("user",user);
+            session.put("user",customer);
             session.put("categoryList", getCategoryList());
             session.put("trackerId", "1111");
             result="success";
@@ -84,10 +84,10 @@ public class LoginAction extends ActionSupport {
             addFieldError("password","PASSWORD must be MINIMUM 5 characters");
         }
     }
-	public Customer getUser() {
-		return user;
+	public Customer getCustomer() {
+		return customer;
 	}
-	public void setUser(Customer user) {
-		this.user = user;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 }

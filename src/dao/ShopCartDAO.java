@@ -20,21 +20,15 @@ public class ShopCartDAO {
     private ResultSet rs;
 
     
-    private Connection getConnection() throws SQLException {
-		java.sql.Connection con;
-		con = ConnectionFactory.getInstance().getConnection();
-		return con;
-	}
+   
    
     public ShopCartDAO() {
-        try {
-           con = getConnection();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        
+        	con = ConnectionFactory.getInstance().getConnection();
+        
     }
 
-    public boolean addUser(Customer customer){
+    public boolean addCustomer(Customer customer){
         boolean added=false;
         try {
             st=con.prepareStatement("insert into customer(name, address,interests,email, cardnumber, username,password) values(?,?,?,?,?,?,?)");
@@ -68,15 +62,15 @@ public class ShopCartDAO {
     }
 
 
-    public boolean isValid(Customer user){
+    public boolean isValid(Customer customer){
         boolean valid=false;
         try {
             st=con.prepareStatement("select * from customer where username " +
 
                     "like ? and password like ?");
             st.clearParameters();
-            st.setString(1,user.getUserName());
-            st.setString(2,user.getPassword());
+            st.setString(1,customer.getUserName());
+            st.setString(2,customer.getPassword());
             rs=st.executeQuery();
             if(rs.next()){
                 valid=true;
