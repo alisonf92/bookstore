@@ -5,7 +5,7 @@ public class Book {
 
     private String title;
     private String author;
-    private int categoryId;
+    private int categoryid;
     private double price;
     
 
@@ -16,24 +16,25 @@ public class Book {
         this.bookId = bookId;
     }
 
-    public int getCategoryId() {
-        return categoryId;
+    public int getCategoryid() {
+        return categoryid;
     }
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+    public void setCategoryid(int categoryId) {
+        this.categoryid = categoryId;
     }
 
     
-    public Book(int bookId, String title, String author, int categoryId, double price) {
+    public Book(int bookId, String title, String author, int categoryid, double price) {
         super();
         this.bookId = bookId;
         this.title = title;
         this.author = author;
-        this.categoryId = categoryId;
+        this.categoryid = categoryid;
         this.price = price;
         
     }
     public Book() {}
+    
 	public String getTitle() {
 		return title;
 	}

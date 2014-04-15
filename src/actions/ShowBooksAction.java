@@ -39,7 +39,7 @@ public class ShowBooksAction extends ActionSupport  implements SessionAware{
 
         Customer user=(Customer)session.get("user");
         System.out.println("---------"+user.getUserName());
-        session.put("amount", new Double(12.5));
+        session.put("Current Credit", new Double(12.50));
         setBookList(dao.getBooks(category));        
         dao.close();
         return "success";

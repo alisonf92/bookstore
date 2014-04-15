@@ -97,7 +97,7 @@
 		</action>
 		
 		<action name="addbook" class="actions.BookAction">
-            <result name="success">addbooksuccess.jsp</result>
+            <result name="success">/jsps/addbooksuccess.jsp</result>
             <result name="failed">/jsps/adminhome.jsp</result>
             <result name="input">/jsps/adminhome.jsp</result>
         </action>

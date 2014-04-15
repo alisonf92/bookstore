@@ -14,16 +14,11 @@
 %>
 <s:actionerror/>
 <s:form action="login">
-<%--
-<s:i18n name="com.example.struts2.shopcart.model.actions.LoginApplicationResources">
-     --%>
-    <s:textfield name="userName" key="label.userName"/>
-    <s:password name="password" key="label.password"/>
-    <%--
-    </s:i18n>
-     --%>
-     <%--This action attrib must be set as name in struts.xml for corresponding action --%>
-    <s:submit name="login" key="label.login.submit" action="log"/>
+
+    <s:textfield name="userName" label="userName"/>
+    <s:password name="password" label="password"/>
+    
+    <s:submit name="login" label="submit" action="log"/>
 </s:form>
 </center>
 </body>

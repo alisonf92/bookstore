@@ -5,12 +5,14 @@ import model.Book;
 import model.Customer;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+import com.opensymphony.xwork2.Preparable;
 
 import dao.AdminDAO;
 import dao.ShopCartDAO;
 
 import com.opensymphony.xwork2.ActionSupport;
-public class BookAction extends ActionSupport {
+public class BookAction extends ActionSupport implements ModelDriven<Book> ,Preparable {
     private String message;
     private Book book;
     private AdminDAO admin;
@@ -53,16 +55,27 @@ public class BookAction extends ActionSupport {
     }
     
 
-    public String execute() throws Exception {
-        admin =new AdminDAO();
-        boolean isAdded=admin.addBook(book);
-        admin.close();
-        if(isAdded){
-            return "success";
-        }else{
-            return "failed";
-        }
-    }
+   
+	@Override
+	public Book getModel() {
+		
+		return book;
+	}
     
+	  public void prepare() throws Exception {
 
+	        book=new Book();
+	    }
+	  public String execute() throws Exception {
+	        admin =new AdminDAO();
+	        
+	        boolean isAdded=admin.addBook(book);
+	      
+	        admin.close();
+	        if(isAdded){
+	            return "success";
+	        }else{
+	            return "failed";
+	        }
+	    }
 }

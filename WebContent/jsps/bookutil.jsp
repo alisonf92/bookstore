@@ -9,10 +9,11 @@
 </head>
 <body>
 <s:form action="book">
-<s:textfield name="book.bookId" label="Book ID"/>
+
 <s:textfield name="book.title" label="Book Name"/>
-<s:textfield name="book.categoryId" label="Category ID"/>
-<s:textfield name="book.bookPrice" label="Book Price"/>
+<s:textfield name="book.author" label="Book Name"/>
+<s:textfield name="book.categoryid" label="Category ID"/>
+<s:textfield name="book.price" label="Book Price"/>
 <s:submit value="add" action="addBook"/>
 <s:submit value="update" action="updateBook"/>
 <s:submit value="delete" action="deleteBook"/>

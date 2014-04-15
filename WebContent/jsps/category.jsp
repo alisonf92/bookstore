@@ -9,9 +9,7 @@
 </head>
 <body>
 Welcome <s:property value="#session.user.userName"/> <a href='<s:url action="logout"/>'>LogOut</a>
- <%--
- Welcome <s:property value="user.userName"/>  <a href='<s:url action="logout"/>'>LogOut</a>
---%>
+
 <center>
     <table border="2">
         <thead>Select Category</thead>

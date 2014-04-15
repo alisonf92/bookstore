@@ -29,9 +29,6 @@ public class ShopCartDAO {
     public ShopCartDAO() {
         try {
            con = getConnection();
-//            Class.forName("com.mysql.jdbc.Driver");
-//            con=DriverManager.getConnection("jdbc:mysql://localhost/bookstore2", "root", "root");
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -53,7 +50,7 @@ public class ShopCartDAO {
             int count=st.executeUpdate();
             if(count==1){
                 added=true;
-                System.out.println("+++++++++++++ Record Added+++++++");
+               
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -105,12 +102,12 @@ public class ShopCartDAO {
         }
         return categoryList;
     }
-    public ArrayList<Book>getBooks(int categoryId){
+    public ArrayList<Book>getBooks(int categoryid){
         ArrayList<Book>bookList=new ArrayList<Book>();
         try {
-            st=con.prepareStatement("select  * from book where categoryId=?");
+            st=con.prepareStatement("select  * from book where categoryid=?");
             st.clearParameters();
-            st.setInt(1,categoryId);
+            st.setInt(1,categoryid);
             rs=st.executeQuery();
             while(rs.next()){
 

@@ -6,7 +6,7 @@
 <s:head />
 </head>
 <body>
-<h2>OnLine Test Appliction</h2>
+<h2></h2>
 <hr />
 <s:actionerror />
 <table border="0">
