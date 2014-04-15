@@ -11,8 +11,9 @@ Welcome <s:property value="#session.user.userName"/> <a href='<s:url action="log
 <body>
 
 <center>
-<h2>Thank You for BILL Do visit again</h2>
-<h2><s:text name=" Recieved The Amount of Rs.  "/><s:text name="#session.bill"/>  </h2>
+<h2>Thank You for Business Please visit again</h2>
+<h3>Your Receipt:</h3>
+<h2><s:text name=" Recieved The Amount of   "/><s:text name="#session.bill"/> Euros  </h2>
 </center>
 </body>
 </html>

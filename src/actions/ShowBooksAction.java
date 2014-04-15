@@ -36,9 +36,8 @@ public class ShowBooksAction extends ActionSupport  implements SessionAware{
     @Override
     public String execute() throws Exception {
         dao=new ShopCartDAO();
-
-        Customer user=(Customer)session.get("user");
-        System.out.println("---------"+user.getUserName());
+        Customer customer=(Customer)session.get("user");
+        System.out.println("---------"+customer.getUserName());
         session.put("Current Credit", new Double(12.50));
         setBookList(dao.getBooks(category));        
         dao.close();

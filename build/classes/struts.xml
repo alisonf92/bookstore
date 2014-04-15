@@ -86,7 +86,7 @@
         <action name="*Book" method="{1}" 
         class="actions.BookAction">
         <interceptor-ref name="SessionStack"/>
-            <result>/jsps/success.jsp</result>
+            <result>/jsps/addbooksuccess.jsp</result>
         </action>
 
         

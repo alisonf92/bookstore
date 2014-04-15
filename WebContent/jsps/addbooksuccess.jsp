@@ -8,8 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h3>Book Added Successfully</h3>
 <s:form action="book">
 <s:textfield name="book.title" label="Book Name"/>
+<s:textfield name="book.author" label="Author"/>
 <s:textfield name="book.categoryid" label="Category ID"/>
 <s:textfield name="book.price" label="Book Price"/>
 <s:submit value="add" action="addBook"/>

@@ -16,7 +16,7 @@ Welcome <s:property value="#session.user.userName"/> <a href='<s:url action="log
         <s:form action="showbooks">
             <tr><td>
 <s:select name="category" list="#session['categoryList']" listValue="categoryName" 
-listKey="categoryId"/>
+listKey="categoryid"/>
             </td></tr>
             <s:submit value="Select"/>
         </s:form>

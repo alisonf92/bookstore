@@ -1,27 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-     <%@ taglib prefix="s" uri="/struts-tags" %>
-     <%@ taglib prefix="sd" uri="/struts-dojo-tags"%>
+<%@taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
-<sd:head parseContent="true"/>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Register Page</title>
+<title>Insert title here</title>
 </head>
 <body>
-<center>
-<h1>Please Add a Book</h1>
-<s:actionerror/>    
-    <s:form action="addbook">
-        <s:textfield name="title" label="title "/>
-        <s:textfield name="author" label="author "/>
-        <s:textfield name="price" label="price" />
-        <s:textfield name="categoryid" label="categoryid" />
-         
-        <s:submit value="Add Book"/>
-    </s:form>
-</center>    
+<h3>Add a Book</h3>
+<s:form action="book">
+<s:textfield name="book.title" label="Title"/>
+<s:textfield name="book.author" label="Author"/>
+<s:textfield name="book.categoryid" label="Category ID"/>
+<s:textfield name="book.price" label="Book Price"/>
+<s:submit value="add" action="addBook"/>
+<s:submit value="update" action="updateBook"/>
+<s:submit value="delete" action="deleteBook"/>
+</s:form>
 </body>
 </html>
