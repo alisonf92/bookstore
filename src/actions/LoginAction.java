@@ -5,7 +5,9 @@ import java.util.Map;
 
 import dao.ShopCartDAO;
 import model.Category;
+
 import model.Customer;
+
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -13,7 +15,9 @@ import com.opensymphony.xwork2.util.ValueStack;
 public class LoginAction extends ActionSupport {
     private String userName;
     private String password;
+
     private Customer user;
+
     private ArrayList<Category>categoryList;
     private ShopCartDAO dao;
     private Map<String, Object>session;
@@ -29,12 +33,8 @@ public class LoginAction extends ActionSupport {
     public void setDao(ShopCartDAO dao) {
         this.dao = dao;
     }
-        public Customer getUser() {
-        return user;
-    }
-    public void setUser(Customer user) {
-        this.user = user;
-    }
+
+    
     public String getUserName() {
         return userName;
     }
@@ -53,7 +53,9 @@ public class LoginAction extends ActionSupport {
         session=ActionContext.getContext().getSession();
         System.out.println(userName+" : "+password);
         dao=new ShopCartDAO();
+
         user=new Customer();
+
         user.setUserName(getUserName());
         user.setPassword(getPassword());
         setUser(user);
@@ -68,7 +70,7 @@ public class LoginAction extends ActionSupport {
             return ERROR;
         }
         dao.close();
-       
+
         return result;
     }
     @Override
@@ -82,4 +84,10 @@ public class LoginAction extends ActionSupport {
             addFieldError("password","PASSWORD must be MINIMUM 5 characters");
         }
     }
+	public Customer getUser() {
+		return user;
+	}
+	public void setUser(Customer user) {
+		this.user = user;
+	}
 }

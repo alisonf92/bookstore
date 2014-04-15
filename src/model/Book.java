@@ -2,24 +2,27 @@ package model;
 
 public class Book {
     private int bookId;
+
     private String title;
     private String author;
     private int categoryId;
     private double price;
     
+
     public int getBookId() {
         return bookId;
     }
     public void setBookId(int bookId) {
         this.bookId = bookId;
     }
-    
+
     public int getCategoryId() {
         return categoryId;
     }
     public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
     }
+
     
     public Book(int bookId, String title, String author, int categoryId, double price) {
         super();
@@ -49,4 +52,5 @@ public class Book {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+
 }

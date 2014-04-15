@@ -6,7 +6,9 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import dao.ShopCartDAO;
+
 import model.Customer;
+
 import model.Book;
 import com.opensymphony.xwork2.ActionSupport;
 public class ShowBooksAction extends ActionSupport  implements SessionAware{
@@ -34,6 +36,7 @@ public class ShowBooksAction extends ActionSupport  implements SessionAware{
     @Override
     public String execute() throws Exception {
         dao=new ShopCartDAO();
+
         Customer user=(Customer)session.get("user");
         System.out.println("---------"+user.getUserName());
         session.put("amount", new Double(12.5));

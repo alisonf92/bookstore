@@ -7,7 +7,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class PaymentAction extends ActionSupport {
     private String mode;
     private Map<String, Object>session;
-    
+
     public String getMode() {
         return mode;
     }

@@ -36,7 +36,9 @@ public class StoreBooksAction extends ActionSupport  implements SessionAware{
             for(Book b : allBooks){
                 if(b.getBookId()==Integer.parseInt(id)){
                     currSelected.add(b);
+
                     bill+=b.getPrice();
+
                     break;
                 }
             }
@@ -44,7 +46,9 @@ public class StoreBooksAction extends ActionSupport  implements SessionAware{
         session.put("currSelected", currSelected);
         session.put("bill",bill);
         for(Book bk : currSelected){
+
             System.out.println(bk.getTitle());
+
         }
         System.out.println("BILL :: "+bill);
         return "success";

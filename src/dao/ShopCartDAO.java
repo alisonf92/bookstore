@@ -11,12 +11,14 @@ import java.util.Arrays;
 
 import model.Book;
 import model.Category;
+
 import model.Customer;
 
 public class ShopCartDAO {
     private Connection con;
     private PreparedStatement st;
     private ResultSet rs;
+
     
     private Connection getConnection() throws SQLException {
 		java.sql.Connection con;
@@ -29,10 +31,12 @@ public class ShopCartDAO {
            con = getConnection();
 //            Class.forName("com.mysql.jdbc.Driver");
 //            con=DriverManager.getConnection("jdbc:mysql://localhost/bookstore2", "root", "root");
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
     public boolean addUser(Customer customer){
         boolean added=false;
         try {
@@ -46,7 +50,6 @@ public class ShopCartDAO {
             st.setString(6,customer.getUserName());
             st.setString(7,customer.getPassword());
             
-           
             int count=st.executeUpdate();
             if(count==1){
                 added=true;
@@ -67,10 +70,12 @@ public class ShopCartDAO {
         }
     }
 
+
     public boolean isValid(Customer user){
         boolean valid=false;
         try {
             st=con.prepareStatement("select * from customer where username " +
+
                     "like ? and password like ?");
             st.clearParameters();
             st.setString(1,user.getUserName());
@@ -108,16 +113,17 @@ public class ShopCartDAO {
             st.setInt(1,categoryId);
             rs=st.executeQuery();
             while(rs.next()){
+
                 bookList.add(new Book(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4), rs.getDouble(5)));
             }
             for(Book b : bookList){
                 System.out.println(b.getTitle());
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return bookList;
     }
-    
-    
+
 }

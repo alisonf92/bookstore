@@ -10,8 +10,7 @@
 <body>
 <center>
 <%
-    
-    String locale=Locale.getDefault().toString();
+
 %>
 <s:actionerror/>
 <s:form action="login">

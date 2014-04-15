@@ -15,6 +15,7 @@
 <center>
 <s:actionerror/>    
     <s:form action="register">
+<<<<<<< HEAD
         <s:textfield name="name" label="Name "/>
         <s:textfield name="address" label="Address "/>
 
@@ -24,6 +25,18 @@
         <s:textfield name="cardnumber" label="CardNumber"/>  
         <s:textfield name="userName" label="User Name" />
         <s:password name="password" label="Password" />  
+=======
+        <s:textfield name="firstName" label="First Name "/>
+        <s:textfield name="lastName" label="Last Name "/>
+        <s:textfield name="userName" label="User Name" />
+        <s:password name="password" label="Password" />
+        <s:radio name="gender" label="Gender" list="{'Male','Female'}" />
+        <s:checkboxlist list="{'Sports','Travel','Reading'}" name="hobbies" label="Hobbies" />
+        <s:fielderror fieldName="hobbies"/>
+        <%--Shows datepicker from 1970 to 2005 --%>
+        <sd:datetimepicker name="birthDate" label="BirthDate : " displayFormat="dd/MM/yy"/>
+        <s:textfield name="emailId" label="Email-Id"/>    
+>>>>>>> 035925f13397ecfef33a356f4efaeedb921a41ff
         <s:submit value="Register"/>
     </s:form>
 </center>    

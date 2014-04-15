@@ -37,9 +37,11 @@
         <action name="purchase">
             <result>/jsps/payment.jsp</result>
         </action>
+
         <action name="gotoadmin">
             <result>/jsps/adminlogin.jsp</result>
         </action>
+
       
         <action name="log" class="actions.LoginAction">
             <result name="success">/jsps/category.jsp</result>
@@ -48,7 +50,9 @@
             <result name="error">/jsps/login.jsp</result>
         </action>
         <action name="register" class="actions.RegisterAction">
+
             <result name="success">/jsps/success.jsp</result>
+
             <result name="failed">/jsps/failed.jsp</result>
             <result name="input">/jsps/register.jsp</result>
         </action>
@@ -84,6 +88,7 @@
         <interceptor-ref name="SessionStack"/>
             <result>/jsps/success.jsp</result>
         </action>
+
         
         <action name="adminloginprocess" class="actions.AdminAction">
 			<result name="input">/jsps/adminlogin.jsp</result>
@@ -96,5 +101,6 @@
             <result name="failed">/jsps/adminhome.jsp</result>
             <result name="input">/jsps/adminhome.jsp</result>
         </action>
+
     </package>
     </struts>

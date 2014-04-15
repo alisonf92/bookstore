@@ -20,7 +20,7 @@ public class PaymentMade extends ActionSupport {
     @Override
     public String execute() throws Exception {
         System.out.println(amount+"========"+cardNo);
-       
+
         return "success";
     }
 }
